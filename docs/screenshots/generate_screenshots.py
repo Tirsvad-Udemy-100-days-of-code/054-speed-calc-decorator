@@ -1,40 +1,30 @@
 """Render the real output of each lecture step to a PNG file.
 
 Dev-only tool (needs Pillow, installed by `pip install -e ".[dev]"`). It runs
-each command, captures its output and draws it as a terminal image, so no
+each step in-process, captures its output and draws it as a terminal image, so no
 screen is captured and the desktop is never touched.
 
 Usage, from the project root:  python docs/screenshots/generate_screenshots.py
 """
 
-import subprocess
-import sys
+import contextlib
+import io
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
+from speed_calc.__main__ import main as speed_calc_main
+from speed_calc.lecture_steps import main as lecture_steps_main
+
 OUTPUT_DIR = Path(__file__).resolve().parent
 ROOT = OUTPUT_DIR.parent.parent
-PYTHON = "python"
 
-# (file name, command shown in the prompt, arguments run after the interpreter)
+# (file name, command shown in the prompt, lecture step to run; None = the program)
 SHOTS = [
-    (
-        "step-1-current-time.png",
-        "python -m speed_calc.lecture_steps 1",
-        ["-m", "speed_calc.lecture_steps", "1"],
-    ),
-    (
-        "step-2-decorator-skeleton.png",
-        "python -m speed_calc.lecture_steps 2",
-        ["-m", "speed_calc.lecture_steps", "2"],
-    ),
-    (
-        "step-3-timing-wrapper.png",
-        "python -m speed_calc.lecture_steps 3",
-        ["-m", "speed_calc.lecture_steps", "3"],
-    ),
-    ("step-4-fast-vs-slow.png", "python -m speed_calc", ["-m", "speed_calc"]),
+    ("step-1-current-time.png", "python -m speed_calc.lecture_steps 1", ["1"]),
+    ("step-2-decorator-skeleton.png", "python -m speed_calc.lecture_steps 2", ["2"]),
+    ("step-3-timing-wrapper.png", "python -m speed_calc.lecture_steps 3", ["3"]),
+    ("step-4-fast-vs-slow.png", "python -m speed_calc", None),
 ]
 
 BACKGROUND, FOREGROUND, PROMPT = "#1e1e2e", "#cdd6f4", "#a6e3a1"
@@ -45,22 +35,22 @@ FONT_CANDIDATES = [
 ]
 
 
-def load_font(size: int) -> ImageFont.ImageFont:
+def load_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     for candidate in FONT_CANDIDATES:
         if Path(candidate).exists():
             return ImageFont.truetype(candidate, size)
     return ImageFont.load_default()
 
 
-def run(arguments: list[str]) -> str:
-    done = subprocess.run(
-        [sys.executable, *arguments],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-        check=True,
-    )
-    return done.stdout.strip()
+def run(step: list[str] | None) -> str:
+    """Run a step in this process and return what it printed."""
+    buffer = io.StringIO()
+    with contextlib.redirect_stdout(buffer):
+        if step is None:
+            speed_calc_main()
+        else:
+            lecture_steps_main(step)
+    return buffer.getvalue().strip()
 
 
 def render(path: Path, command: str, output: str) -> None:
@@ -77,8 +67,8 @@ def render(path: Path, command: str, output: str) -> None:
 
 
 def main() -> None:
-    for name, command, arguments in SHOTS:
-        render(OUTPUT_DIR / name, command, run(arguments))
+    for name, command, step in SHOTS:
+        render(OUTPUT_DIR / name, command, run(step))
         print("wrote", name)
 
 
