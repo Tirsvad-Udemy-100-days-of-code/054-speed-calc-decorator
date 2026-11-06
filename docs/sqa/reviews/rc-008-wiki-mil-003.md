@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-06 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-06 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [0227b10] |
 
 ---
 
@@ -75,3 +75,4 @@ Go-with-conditions. All Mandatory criteria that can be checked in the repository
 
 [MIL-003]: ../../milestones/mil-003-wiki-and-screenshots.md
 [QC-WIKI-001]: ../../../framework/qc/artifacts/qc-wiki.md
+[0227b10]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/0227b109d9b4031b137f6c1e7833ccbb8fd54f06
