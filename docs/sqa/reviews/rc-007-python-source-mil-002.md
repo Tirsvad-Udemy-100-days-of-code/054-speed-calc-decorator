@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-06 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-11-06 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [d7c4532] |
 
 ---
 
@@ -71,3 +71,4 @@ Go. The only Fail is criterion 13, which is Optional and so not blocking. Round 
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
 [MIL-002]: ../../milestones/mil-002-speed-calc-decorator.md
 [ADR-0001]: ../../adr/adr-0001-skip-stories-plain-package.md
+[d7c4532]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/d7c45320d545b47d45d65174544101cdbe11f641
