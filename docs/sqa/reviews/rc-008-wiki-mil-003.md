@@ -41,7 +41,7 @@ Checks were run with a script that compares the pages: fenced code blocks, inlin
 | 11 | Language line on every page, current language bold, links to same page | Pass | 18 of 18 match the expected line; targets exist |
 | 12 | Naming `<Page>-<code>.md`, English unsuffixed | Pass | `-da`, `-ms` suffixes, BCP 47 |
 | 13 | Code, commands, file names, IDs stay English | Pass | Code blocks, inline code spans and image URLs identical to English in all 12 translations. Code comments such as `# seconds since Jan 1st, 1970` stay English as code |
-| 14 | Checked on the published wiki after the change | Pending | Cannot be done before merge and publication; checked after publication |
+| 14 | Checked on the published wiki after the change | Pass | 2026-11-06, after the merge and the publish workflow: the wiki API lists 19 pages (6 pages x 3 languages and `_Sidebar`); all 18 pages return HTTP 200 on the host; the `Step-3-Timing-Wrapper-ms` page links to the sibling pages in all three languages; `_Sidebar` and the `step-1` screenshot URL return 200. Checked by the AI as stand-in for S01 (an objective check, not a language judgement) |
 | 15 | Layout change made in generator and checklist (Optional) | N-A | No layout rule changed |
 | 16 | Folder flat | Pass | All 19 files directly in `docs/wiki/`, no subfolder |
 
@@ -59,17 +59,17 @@ Further findings:
 | 2 | Each page starts with the language switch line | Pass | Criterion 11; the line follows the title heading, as in the checklist example |
 | 3 | Each step page shows its screenshot and a "What we gained" section | Pass | Steps 1 to 4 in all three languages have an image and the section (also `Setup`) |
 | 4 | Sidebar shape | Pass | Criteria 2 to 6 |
-| 5 | Review against QC-WIKI-001 is a Go | Pending | This record; see the verdict |
+| 5 | Review against QC-WIKI-001 is a Go | Pass | This record; see the verdict |
 
 ## Overall Verdict
 
-Go-with-conditions. All Mandatory criteria that can be checked in the repository pass and no defect was found. Criterion 14 is `Pending` because the published wiki exists only after the merge, so the verdict is Go-with-conditions at most. The status of this record and of MIL-003 criterion 5 is settled when criterion 14 is checked after publication.
+Go. All Mandatory criteria pass and no defect was found. Criterion 14 was `Pending` until the wiki was published; it passed on 2026-11-06 after the merge (see its row). Mode: autonomous, not independent; reviewer AI as stand-in for S01.
 
 ## Action Items
 
 | Action | Owner | Due |
 | --- | --- | --- |
-| After the merge and publication, open the published wiki and check the sidebar, every page, every link and the four screenshots (criterion 14); then re-review criterion 14 and close the conditions | S01 | 2026-11-09 |
+| Closed 2026-11-06: published wiki checked (criterion 14) | S01 | 2026-11-09 |
 
 ---
 
