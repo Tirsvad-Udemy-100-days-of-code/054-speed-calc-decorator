@@ -1,0 +1,86 @@
+"""Render the real output of each lecture step to a PNG file.
+
+Dev-only tool (needs Pillow, installed by `pip install -e ".[dev]"`). It runs
+each command, captures its output and draws it as a terminal image, so no
+screen is captured and the desktop is never touched.
+
+Usage, from the project root:  python docs/screenshots/generate_screenshots.py
+"""
+
+import subprocess
+import sys
+from pathlib import Path
+
+from PIL import Image, ImageDraw, ImageFont
+
+OUTPUT_DIR = Path(__file__).resolve().parent
+ROOT = OUTPUT_DIR.parent.parent
+PYTHON = "python"
+
+# (file name, command shown in the prompt, arguments run after the interpreter)
+SHOTS = [
+    (
+        "step-1-current-time.png",
+        "python -m speed_calc.lecture_steps 1",
+        ["-m", "speed_calc.lecture_steps", "1"],
+    ),
+    (
+        "step-2-decorator-skeleton.png",
+        "python -m speed_calc.lecture_steps 2",
+        ["-m", "speed_calc.lecture_steps", "2"],
+    ),
+    (
+        "step-3-timing-wrapper.png",
+        "python -m speed_calc.lecture_steps 3",
+        ["-m", "speed_calc.lecture_steps", "3"],
+    ),
+    ("step-4-fast-vs-slow.png", "python -m speed_calc", ["-m", "speed_calc"]),
+]
+
+BACKGROUND, FOREGROUND, PROMPT = "#1e1e2e", "#cdd6f4", "#a6e3a1"
+FONT_CANDIDATES = [
+    "C:/Windows/Fonts/consola.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+    "/System/Library/Fonts/Menlo.ttc",
+]
+
+
+def load_font(size: int) -> ImageFont.ImageFont:
+    for candidate in FONT_CANDIDATES:
+        if Path(candidate).exists():
+            return ImageFont.truetype(candidate, size)
+    return ImageFont.load_default()
+
+
+def run(arguments: list[str]) -> str:
+    done = subprocess.run(
+        [sys.executable, *arguments],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return done.stdout.strip()
+
+
+def render(path: Path, command: str, output: str) -> None:
+    font = load_font(20)
+    lines = [f"$ {command}", *output.splitlines()]
+    width = int(max(font.getlength(line) for line in lines)) + 48
+    height = 28 * len(lines) + 48
+    image = Image.new("RGB", (max(width, 640), height), BACKGROUND)
+    draw = ImageDraw.Draw(image)
+    for index, line in enumerate(lines):
+        colour = PROMPT if index == 0 else FOREGROUND
+        draw.text((24, 24 + 28 * index), line, font=font, fill=colour)
+    image.save(path)
+
+
+def main() -> None:
+    for name, command, arguments in SHOTS:
+        render(OUTPUT_DIR / name, command, run(arguments))
+        print("wrote", name)
+
+
+if __name__ == "__main__":
+    main()

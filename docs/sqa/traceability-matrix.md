@@ -27,7 +27,7 @@ updated whenever an artifact instance is created or reviewed.
 | [BC-001] | Business Case | en | it | [SA-001] | [PP-001], [MIL-001], [MIL-002], [MIL-003] | [RC-001] (Go) |
 | [PP-001] | Project Plan | en | it | [BC-001], [SA-001] | [MIL-001], [MIL-002], [MIL-003] | - (no review gate; accepted by S01 through the accepted plan) |
 | [MIL-001] | Milestone / Gateway | en | it | [BC-001], [PP-001] | [MIL-002]; source code is not built yet; ADR-0001 is written | [RC-003] (Go) |
-| [MIL-002] | Milestone / Gateway | en | it | [BC-001], [PP-001], [MIL-001] | [MIL-003]; source code and tests are not built yet | [RC-004] (Go) |
+| [MIL-002] | Milestone / Gateway | en | it | [BC-001], [PP-001], [MIL-001] | [MIL-003]; Python source and tests (reviewed in RC-007) | [RC-004] (Go) |
 | [MIL-003] | Milestone / Gateway | en | it | [BC-001], [PP-001], [MIL-002] | - | [RC-005] (Go) |
 | [ADR-0001] | Architecture Decision Record | n/a | n/a | [BC-001], [PP-001] | source code and tests are not built yet | [RC-006] (Go) |
 | [RC-001] | SQA Review Record | - | - | [BC-001] | - | - |
@@ -36,6 +36,7 @@ updated whenever an artifact instance is created or reviewed.
 | [RC-004] | SQA Review Record | - | - | [MIL-002] | - | - |
 | [RC-005] | SQA Review Record | - | - | [MIL-003] | - | - |
 | [RC-006] | SQA Review Record | - | - | [ADR-0001] | - | - |
+| [RC-007] | SQA Review Record | - | - | [MIL-002] | - | - |
 
 ## Concern Coverage
 
@@ -84,5 +85,6 @@ are not listed there.
 [RC-004]: ./reviews/rc-004-mil-002-speed-calc-decorator.md
 [RC-005]: ./reviews/rc-005-mil-003-wiki.md
 [RC-006]: ./reviews/rc-006-adr-0001.md
+[RC-007]: ./reviews/rc-007-python-source-mil-002.md
 [ADR-0001]: ../adr/adr-0001-skip-stories-plain-package.md
 [a07d05b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/a07d05b385e6b831b90731aefe08f078ebb951ca

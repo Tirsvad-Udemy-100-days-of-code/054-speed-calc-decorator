@@ -11,6 +11,7 @@ browsing for ideas. It has no runtime dependencies.
 - [Requirements](#-requirements)
 - [Setup](#-setup)
 - [Run](#-run)
+- [Lecture steps](#-lecture-steps)
 - [Tests](#-tests)
 - [Documentation](#-documentation)
 - [License](#-license)
@@ -79,11 +80,50 @@ With the environment active:
 python -m speed_calc
 ```
 
+It prints the current time, then the run time of `fast_function` and
+`slow_function`. The values depend on your machine.
+
+## 🪜 Lecture steps
+
+Each step runs on its own with `python -m speed_calc.lecture_steps N` (N is 1 to
+4); step 4 is the same as `python -m speed_calc`. The screenshots are rendered
+from the real output of each command by
+[`docs/screenshots/generate_screenshots.py`](./docs/screenshots/generate_screenshots.py).
+
+### Step 1: the current time
+
+`time.time()` returns the seconds since January 1st, 1970.
+
+![Step 1: the current time](./docs/screenshots/step-1-current-time.png)
+
+### Step 2: the decorator skeleton
+
+A decorator takes a function and returns a wrapper that calls it. `functools.wraps`
+keeps the original name.
+
+![Step 2: the decorator skeleton](./docs/screenshots/step-2-decorator-skeleton.png)
+
+### Step 3: timing the call
+
+The wrapper reads the clock before and after the call and prints the difference.
+
+![Step 3: the timing wrapper](./docs/screenshots/step-3-timing-wrapper.png)
+
+### Step 4: fast against slow
+
+`@speed_calc_decorator` above `fast_function` and `slow_function` gives the
+expected output.
+
+![Step 4: fast against slow](./docs/screenshots/step-4-fast-vs-slow.png)
+
 ## 🧪 Tests
 
 ```bash
 python -m pytest
 ```
+
+All tests pass; they use a fake clock, so they do not depend on how fast your
+machine is.
 
 ## 📖 Documentation
 
