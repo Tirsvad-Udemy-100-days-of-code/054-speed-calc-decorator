@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-06 | Proposed | Jens Tirsvad Nielsen | S01 | Initial version: BC, SA, PP, MIL-001 to MIL-003 and RC-001 to RC-005 | pending |
+| 2026-11-06 | Proposed | Jens Tirsvad Nielsen | S01 | Initial version: BC, SA, PP, MIL-001 to MIL-003 and RC-001 to RC-005 | [a07d05b] |
 
 ---
 
@@ -85,3 +85,4 @@ are not listed there.
 [RC-005]: ./reviews/rc-005-mil-003-wiki.md
 [RC-006]: ./reviews/rc-006-adr-0001.md
 [ADR-0001]: ../adr/adr-0001-skip-stories-plain-package.md
+[a07d05b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/a07d05b385e6b831b90731aefe08f078ebb951ca

@@ -9,8 +9,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
-| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Review RC-006 fixed 2 defects (stakeholder IDs S01 to S03 now explained; shared rationale for the two decisions stated in Context); accepted as stand-in for S01 in autonomous mode, not independent | pending |
+| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [a07d05b] |
+| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Review RC-006 fixed 2 defects (stakeholder IDs S01 to S03 now explained; shared rationale for the two decisions stated in Context); accepted as stand-in for S01 in autonomous mode, not independent | [a07d05b] |
 
 Allowed Status values: `Proposed`, `Accepted`, `Rejected`, `Deprecated`, `Superseded by ADR-NNNN`.
 
@@ -65,3 +65,4 @@ free of any import from the demo or entry modules.
 
 [BC-001]: ../business-case.md
 [PP-001]: ../project-plan.md
+[a07d05b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/a07d05b385e6b831b90731aefe08f078ebb951ca

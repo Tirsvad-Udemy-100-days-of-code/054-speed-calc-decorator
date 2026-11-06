@@ -11,8 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | pending |
-| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | S01 | Informal review against QC-PP-001 fixed 7 defects (constants.py gateway, No-Go rule, sources, risk trace, stories, sync mark); accepted by S01 as Product Owner through the accepted plan in chat on 2026-11-06 | pending |
+| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [a07d05b] |
+| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | S01 | Informal review against QC-PP-001 fixed 7 defects (constants.py gateway, No-Go rule, sources, risk trace, stories, sync mark); accepted by S01 as Product Owner through the accepted plan in chat on 2026-11-06 | [a07d05b] |
 
 ---
 
@@ -97,3 +97,4 @@ beyond it changes the constraint in [BC-001] and needs a new version of it.
 [MIL-001]: ./milestones/mil-001-project-baseline.md
 [MIL-002]: ./milestones/mil-002-speed-calc-decorator.md
 [MIL-003]: ./milestones/mil-003-wiki-and-screenshots.md
+[a07d05b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/a07d05b385e6b831b90731aefe08f078ebb951ca

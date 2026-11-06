@@ -11,8 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | S01 | Review findings fixed: traceability to success criteria 4 and 5 (RC-005) | pending |
-| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Go per RC-005; language checks confirmed by S01 | pending |
+| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | S01 | Review findings fixed: traceability to success criteria 4 and 5 (RC-005) | [a07d05b] |
+| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Go per RC-005; language checks confirmed by S01 | [a07d05b] |
 
 ---
 
@@ -74,3 +74,4 @@ Danish and Bahasa Malaysia, with a screenshot per step.
 ---
 
 [BC-001]: ../business-case.md
+[a07d05b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/a07d05b385e6b831b90731aefe08f078ebb951ca

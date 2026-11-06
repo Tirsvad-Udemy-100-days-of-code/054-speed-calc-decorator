@@ -11,8 +11,8 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | S01 | Review findings fixed: CN-007 traced to success criterion 3, abbreviations (RC-002) | pending |
-| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Go per RC-002; language checks confirmed by S01 | pending |
+| 2026-11-06 | Deprecated | Jens Tirsvad Nielsen | S01 | Review findings fixed: CN-007 traced to success criterion 3, abbreviations (RC-002) | [a07d05b] |
+| 2026-11-06 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Go per RC-002; language checks confirmed by S01 | [a07d05b] |
 
 ---
 
@@ -86,3 +86,4 @@ Product Owner: S01, accepted 2026-11-06 via RC-002.
 ---
 
 [BC-001]: ./business-case.md
+[a07d05b]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/054-speed-calc-decorator/commit/a07d05b385e6b831b90731aefe08f078ebb951ca
