@@ -1,0 +1,15 @@
+# Doxygen configuration. Everything not listed here keeps the Doxygen default.
+# Generate the HTML documentation with:  doxygen Doxyfile
+PROJECT_NAME           = "Speed Calc Decorator"
+PROJECT_BRIEF          = "Decorator that measures how long a function takes to run"
+OUTPUT_DIRECTORY       = docs/doxygen
+INPUT                  = src
+FILE_PATTERNS          = *.py
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+OPTIMIZE_OUTPUT_JAVA   = YES
+MARKDOWN_SUPPORT       = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = YES

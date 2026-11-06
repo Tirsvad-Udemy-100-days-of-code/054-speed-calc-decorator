@@ -1,0 +1,36 @@
+# Personal tokens: never commit
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Packaging and build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Doxygen output
+docs/doxygen/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

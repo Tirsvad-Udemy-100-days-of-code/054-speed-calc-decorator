@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speed-calc-decorator"
+version = "0.1.0"
+description = "Udemy 100 Days of Code, lecture 054: a decorator that measures how long a function takes to run."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "Jens Tirsvad Nielsen" }]
+keywords = ["python", "decorator", "udemy", "100-days-of-code", "timing"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pillow>=11"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 88
